@@ -18,6 +18,7 @@ export default function CardEvento (props) {
 
 
     const AddFav = async(id_evento)=>{
+        setvalorFava(!valorFav);
         try {
             //agrega el evento al usuario creando la relacion
             const url = "http://localhost:3000/app/toggle-favorite/"+id_evento;
@@ -26,7 +27,7 @@ export default function CardEvento (props) {
               }
             const response  = await axios.post(url, body);
             //console.log(response.data.favorites);
-            setvalorFava(!valorFav);
+            
         } catch (e){
             console.log(e);
         }
